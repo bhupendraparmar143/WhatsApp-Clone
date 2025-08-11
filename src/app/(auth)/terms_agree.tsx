@@ -55,9 +55,9 @@ const style = StyleSheet.create({
     // overflow:"hidden",
   },
   term_img: {
-    width: moderateScale(250),
-    height: moderateScale(250),
-    borderRadius: moderateScale(250),
+    width: moderateScale(210),
+    height: moderateScale(210),
+    borderRadius: moderateScale(210),
     borderColor: "black",
 
   },
