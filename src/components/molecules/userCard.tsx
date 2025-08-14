@@ -1,16 +1,15 @@
-import MaterialIcons from "@expo/vector-icons/MaterialIcons"
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters'
-
-const UserCard = ({ image, name, msg, time, count, status, style, call }: any) => {
+const UserCard = ({ image, name, msg, time, count, status, call, plusIconComponent,callIcon }: any) => {
     return (
         <SafeAreaView style={styles.container}>
             <View style={styles.innerMainContainer}>
                 <View style={styles.leftContainer}>
-                    <View style={styles.imageContainer}>
-                        <Image source={image} style={[styles.user_image, style, status && { borderColor: "#006B02" }]} resizeMode='contain'></Image>
+                    <View style={[styles.imageContainer]}>
+                        <Image source={image} style={[styles.user_image, status && { borderColor: "#006B02" }]} resizeMode='contain' />
+                        {plusIconComponent}
                     </View>
                     <View style={styles.bodyContainer}>
                         <Text style={styles.name}>{name}</Text>
@@ -18,13 +17,15 @@ const UserCard = ({ image, name, msg, time, count, status, style, call }: any) =
                     </View>
                 </View>
                 <View style={styles.countContainer}>
-                    {call && (call == "1") ? <MaterialIcons name="call" size={24} color="black" style={{color:"#008069"}} /> : <MaterialIcons name="videocam" style={{color:"#008069", fontSize:moderateScale(25)}}/>}
+                    {/* {!!call && (call == true) ? <MaterialIcons name="call" size={24} color="black" style={{color:"#008069"}} /> : <MaterialIcons name="videocam" style={{color:"#008069", fontSize:moderateScale(25)}}/>} */}
+                    {callIcon}
                     {time && <Text style={styles.textTime}>{time}</Text>}
                     {
-                        count && <View style={styles.textCountContainer}>
+                        !!count && <View style={styles.textCountContainer}>
                             <Text style={styles.textCount}>{count}</Text>
                         </View>
                     }
+
 
                 </View>
             </View>
@@ -35,7 +36,6 @@ const UserCard = ({ image, name, msg, time, count, status, style, call }: any) =
 export default UserCard
 const styles = StyleSheet.create({
     container: {
-        paddingBottom: moderateScale(9),
         backgroundColor: "white"
     },
     imageContainer: {
@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
         height: moderateScale(53),
         borderRadius: moderateScale(53),
         borderWidth: 2,
-        borderColor: "white"
+        borderColor: "white",
     },
     name: {
         fontSize: scale(14),

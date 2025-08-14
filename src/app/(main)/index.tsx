@@ -9,7 +9,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { moderateScale, scale, verticalScale } from 'react-native-size-matters';
 
 const Home = () => {
-  const [currentPage, setCurrentPage] = useState('status');
+  const [currentPage, setCurrentPage] = useState('chat');
   const activePage = () => {
     switch (currentPage) {
       case "chat":
