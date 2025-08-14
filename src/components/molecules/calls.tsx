@@ -1,8 +1,7 @@
 import imagePath from '@/src/constant/imagePath'
 import MaterialIcons from '@expo/vector-icons/MaterialIcons'
 import React from 'react'
-import { FlatList, Text, View } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { FlatList, StyleSheet, Text, View } from 'react-native'
 import UserCard from './userCard'
 const Calls = () => {
   const data = [
@@ -22,8 +21,9 @@ const Calls = () => {
     { name: "Bhupendra13", msg: "Yesterday, 01:00 am", img: imagePath.user_profile, call: "voice" }
   ]
   return (
-    <SafeAreaView style={{ flex: 1 }} >
+    <View style={{ flex: 1 }} >
       <FlatList
+      style={styles.flatelist}
         data={data}
         renderItem={({ item }) => (
           <UserCard image={item.img} msg={item.msg} name={item.name} callIcon={
@@ -31,8 +31,13 @@ const Calls = () => {
           } />
         )}
       />
-    </SafeAreaView>
+    </View>
   )
 }
 
 export default Calls
+const styles = StyleSheet.create({
+  flatelist:{
+    backgroundColor:"white"
+  }
+})

@@ -56,8 +56,6 @@ const styles = StyleSheet.create({
   topBarContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    // backgroundColor: "#008069",
-    // paddingHorizontal: moderateScale(20),
     gap: scale(10),
 
   },
@@ -67,7 +65,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderBottomWidth: 3,
     borderColor: "#008069",
-    paddingVertical:verticalScale(10)
+    padding:verticalScale(10),
+    
   },
   topBarText: {
     // flex: 1,

@@ -2,7 +2,6 @@ import imagePath from '@/src/constant/imagePath'
 import AntDesign from '@expo/vector-icons/AntDesign'
 import React from 'react'
 import { FlatList, StyleSheet, View } from 'react-native'
-import { SafeAreaView } from 'react-native-safe-area-context'
 import { moderateScale, verticalScale } from 'react-native-size-matters'
 import UserCard from './userCard'
 
@@ -24,7 +23,7 @@ const Status = () => {
     { name: "Bhupendra0", msg: "Yesterday, 01:00 am", img: imagePath.user_profile }
   ]
   return (
-    <SafeAreaView style={{flex:1}} >
+    <View style={{flex:1}} >
       <View style={styles.my_status}>
         <UserCard image={imagePath.user_profile} name={"My status"} msg={'Tap to status update'}
           plusIconComponent={<View style={styles.plus_icon_container}>
@@ -40,7 +39,7 @@ const Status = () => {
           <UserCard image={item.img} name={item.name} msg={item.msg} status={true} />
         )}
       />
-    </SafeAreaView>
+    </View>
   )
 }
 

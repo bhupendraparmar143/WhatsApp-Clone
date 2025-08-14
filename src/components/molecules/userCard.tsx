@@ -36,7 +36,7 @@ const UserCard = ({ image, name, msg, time, count, status, call, plusIconCompone
 export default UserCard
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: "white"
+        backgroundColor: "white",
     },
     imageContainer: {
         alignItems: "center",
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         justifyContent: "space-between",
         paddingHorizontal: moderateScale(13),
-        paddingVertical: verticalScale(5)
+        paddingVertical: verticalScale(10)
     },
     leftContainer: {
         flexDirection: "row",
